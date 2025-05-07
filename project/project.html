@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Portfolio</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Adjusted path to style.css -->
+    <!-- Font awesome for icons if needed for project links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        /* Specific styles for project.html header if different from global */
+        /* This assumes the global header from style.css is used. 
+           If a unique header is needed, style it here. */
+        header {
+            /* Example: if this page's header needs specific padding */
+            /* padding: 20px 40px; */
+        }
+    </style>
+</head>
+<body class="body-projects"> <!-- Added class for specific background -->
+    <div class="page-content-wrapper"> <!-- Wrapper for content -->
+        
+        <!-- Standard Portfolio Header -->
+        <div class="wrapper"> <!-- This wrapper is used in index.html for header alignment -->
+            <header>
+                <div class="logo">
+                    <a href="../index.html" style="display: contents; text-decoration: none;">
+                        <i class="fa-solid fa-a"></i> <!-- Assuming this is the standard logo icon -->
+                        <div class="logo-text">DEEPAK KUMAR GS</div>
+                    </a>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../edu.html">Education</a></li>
+                        <li><a href="#">Projects</a></li> <!-- Current page -->
+                        <li><a href="../achive.html">Achievement</a></li>
+                        <li><a href="../hobbier/hobbie.html">Hobbies</a></li>
+                        <li><a href="../skill.html">Skills</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <h2 class="projects-section-title">My Technical Projects</h2>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Portfolio Website V1</h3>
+                <p>Developed a personal responsive portfolio website to showcase skills, projects, and achievements. Focused on clean UI/UX, and modern web design principles. This is the very site you are browsing!</p>
+                <div class="tech-stack">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Responsive Design</span>
+                </div>
+                <!-- <a href="#" class="project-link">View Live <i class="fas fa-external-link-alt"></i></a> -->
+            </div>
+
+            <div class="project-card">
+                <h3>CRM Application (Contest)</h3>
+                <p>Participated in a contest to develop a Customer Relationship Management (CRM) application. The app was built using Flutter for cross-platform compatibility and Firebase for backend services, focusing on lead management and workflow automation.</p>
+                <div class="tech-stack">
+                    <span>Flutter</span>
+                    <span>Dart</span>
+                    <span>Firebase</span>
+                    <span>Android Studio</span>
+                    <span>UI/UX</span>
+                </div>
+                <!-- <a href="#" class="project-link">View Details <i class="fas fa-info-circle"></i></a> -->
+            </div>
+
+            <div class="project-card">
+                <h3>AI-Powered Task Automation Bot</h3>
+                <p>Designed and implemented an AI bot using Python and N8N for automating repetitive digital tasks. Leveraged Ollama for local LLM integration, enabling natural language understanding and intelligent decision-making within automated workflows. Containerized with Docker for easy deployment.</p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>N8N</span>
+                    <span>Ollama</span>
+                    <span>Docker</span>
+                    <span>APIs</span>
+                    <span>AI/ML</span>
+                </div>
+                <!-- <a href="https://github.com/yourusername/ai-task-bot" class="project-link" target="_blank">View on GitHub <i class="fab fa-github"></i></a> -->
+            </div>
+            
+            <div class="project-card">
+                <h3>E-commerce Platform Prototype</h3>
+                <p>Developed a prototype for an e-commerce platform focusing on a scalable microservices architecture. Key features included product catalog management, user authentication, and a basic shopping cart functionality. Explored technologies like Node.js, Express, and MongoDB.</p>
+                <div class="tech-stack">
+                    <span>Node.js</span>
+                    <span>Express.js</span>
+                    <span>MongoDB</span>
+                    <span>REST APIs</span>
+                    <span>JWT</span>
+                </div>
+            </div>
+
+        </div> <!-- Close projects-grid -->
+
+    </div> <!-- Close page-content-wrapper -->
+
+    <!-- Typed.js and navbar script (if needed on this page, similar to index.html) -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script> -->
+    <script>
+        // Navbar toggle script (copied from index.html, ensure paths are correct if any external files are used by it)
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav = document.querySelector(".navlinks");
+        // var links = document.querySelector(".navlinks li"); // This line seems unused in index.html script
+
+        if(togglebtn && nav) { // Check if elements exist
+            togglebtn.addEventListener("click", function(){
+                this.classList.toggle("click");
+                nav.classList.toggle("open");
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Achievements</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+  <style>
+    /* Specific styles for achive.html */
+    /* Header might be shared or unique. If unique, style here.
+       Assuming a global header style exists in style.css or this page doesn't have the standard header.
+       If it needs the standard header, it should be added to the HTML body. */
+    
+    section#achievement {
+      padding: 50px 20px; /* Increased padding */
+      text-align: center;
+      max-width: 900px; /* Max width for the section */
+      margin: 40px auto; /* Centering the section */
+    }
+    section#achievement h2 {
+      font-size: 2.8em; /* Larger title */
+      margin-bottom: 40px; /* More space below title */
+      color: #ffd700; /* Gold color for achievements heading */
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Subtle glow */
+    }
+    .achievement-item {
+      margin: 30px auto;
+      background-color: rgba(40, 50, 70, 0.7); /* Dark slate blue, semi-transparent */
+      padding: 25px;
+      border-radius: 15px; /* More rounded */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      width: 90%; 
+      max-width: 700px; /* Max width for individual items */
+      border: 1px solid rgba(255, 215, 0, 0.3); /* Subtle gold border */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .achievement-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(255, 215, 0, 0.2);
+    }
+    .achievement-title {
+      cursor: pointer;
+      font-size: 1.8em; /* Larger item title */
+      color: #ffd700;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .achievement-title:hover {
+      text-decoration: none; /* Remove underline, rely on hover effect of item */
+      color: #fffacd; /* Lighter gold on hover */
+    }
+    .achievement-details {
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+      color: #d0d0d0; /* Light gray for details */
+      line-height: 1.7;
+    }
+    .achievement-details img {
+      width: 100%;
+      max-width: 350px; /* Slightly larger images */
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border: 3px solid rgba(255, 215, 0, 0.5); /* Gold border for images */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .achievement-details h3 {
+        color: #fffacd; /* Light gold for sub-headings in details */
+        font-size: 1.3em;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .achievement-details p {
+        margin-bottom: 8px;
+    }
+    .achievement-details strong {
+        color: #ffd700;
+    }
+  </style>
+  <script>
+    function toggleDetails(id) {
+      const element = document.getElementById(id);
+      const allDetails = document.querySelectorAll('.achievement-details');
+      
+      // Optional: Close other open details when one is clicked
+      // allDetails.forEach(detail => {
+      //   if (detail.id !== id && detail.style.display === 'block') {
+      //     detail.style.display = 'none';
+      //   }
+      // });
+
+      element.style.display = element.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</head>
+<body class="body-achievements"> <!-- Added class for specific background -->
+  <div class="page-content-wrapper"> <!-- Wrapper for content -->
+    <!-- Header (If this page should have the standard header, add it here like in edu.html) -->
+    <!-- Example: 
+    <header>
+      <a href="index.html" style="display: contents;"><img src="./DK.jpg" alt="Logo"></a>
+      <h1>Deepak Kumar G S</h1>
+    </header> 
+    -->
+    <!-- Achievement Section -->
+    <section id="achievement">
+      <h2>Achievements</h2>
+
+    <!-- Achievement 1 -->
+    <div class="achievement-item">
+      <p class="achievement-title" onclick="toggleDetails('achievement1')">Achievement 1</p>
+      <div class="achievement-details" id="achievement1">
+        <center>
+          <img src="./gce1.jpg" alt="Dance Achievement"> <!-- Replace with actual image path -->
+          <h3>Proud Moment at Government College of Engineering, Salem</h3>
+          <p>🥈 <strong>2nd Prize – Group Dance</strong></p>
+          <p>🏆 <strong>Overall Trophy</strong></p>
+          <p>💸 <strong>Cash Prize of ₹5,000</strong></p>
+          <p>Reflecting the dedication, coordination, and hard work of our amazing dance team!</p>
+        </center>
+      </div>
+    </div>
+
+    <!-- Achievement 2 -->
+    <div class="achievement-item">
+      <p class="achievement-title" onclick="toggleDetails('achievement2')">Achievement 2</p>
+      <div class="achievement-details" id="achievement2">
+        <center>
+          <img src="./zonal.jpg" alt="Handball Achievement"> <!-- Replace with actual image path -->
+          <h3>Proud to Lead My Team to Success – Zonal Handball Championship</h3>
+          <p>🏆 <strong>2nd Place – Zonal Handball Competition</strong></p>
+          <p>🔹 Tactical Game Strategy – Coordinating offensive and defensive strategies for optimum performance.</p>
+          <p>🔹 Team Cohesion & Leadership – Fostering collaboration and building trust within the team.</p>
+          <p>🔹 Adaptability – Adjusting tactics in real-time based on opponent strategies.</p>
+          <p>🔹 Physical Conditioning & Endurance – Staying in peak shape for high-intensity gameplay.</p>
+          <p>This experience honed my leadership and problem-solving skills, and I'm proud of my team’s performance under pressure.</p>
+        </center>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Education</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+  <style>
+    /* Specific styles for edu.html if needed, or to override style.css */
+    header {
+      display: flex; /* Ensure flex properties for alignment */
+      align-items: center; /* Vertically align items */
+      padding: 20px 40px; 
+      background-color: rgba(0,0,0,0.2); 
+    }
+
+    header img { /* Style for the logo image in edu.html header */
+      height: 45px; /* Match home page logo icon height */
+      width: 45px;  /* Match home page logo icon width */
+      border-radius: 50%; /* Make it circular */
+      object-fit: cover; /* Ensure image covers the area well */
+      margin-right: 15px; /* Space between logo and text, similar to home */
+      border: 2px solid #007ced; /* Border color similar to home logo's background */
+      /* Note: The home page logo has a background color, this image will have a border instead */
+      transition: transform 0.3s ease; /* Optional: hover effect */
+    }
+    header img:hover {
+        transform: scale(1.1); /* Optional: hover effect */
+    }
+
+    header h1 { /* Ensure h1 styling is consistent or as desired */
+        font-size: 1.8em; /* Example, adjust as needed */
+        color: #00aeff; /* Or match a theme color */
+        margin: 0;
+    }
+
+
+    /* Styles for education items, assuming they are not globally styled */
+    section#education {
+      background-color: rgba(20, 30, 50, 0.6); /* Semi-transparent dark blue */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      margin: 40px auto; /* Center the section */
+      max-width: 800px; /* Max width for content readability */
+    }
+    section#education h2 {
+      text-align: center;
+      color: #00aeff; /* Using a primary color from a potential theme */
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+    .education-item {
+      margin-bottom: 25px;
+      padding: 20px;
+      border: 1px solid rgba(0, 174, 255, 0.3); /* Subtle border with theme color */
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.05); /* Very subtle light background for cards */
+    }
+    .education-item h3 {
+      color: #00ffc8; /* Using a secondary color from a potential theme */
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .education-item p {
+      margin: 8px 0;
+      color: #c0c0c0; /* Lighter gray for paragraph text */
+      line-height: 1.6;
+    }
+    .education-item p strong {
+        color: #e0e0e0; /* Slightly brighter for strong text */
+    }
+    a {
+      color: #00aeff; /* Theme primary color for links */
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #00ffc8; /* Theme secondary color on hover */
+    }
+  </style>
+</head>
+<body class="body-education"> <!-- Added class for specific background -->
+  <div class="page-content-wrapper"> <!-- Wrapper for content -->
+    <!-- Header with logo and name -->
+    <header>
+      <a href="index.html" style="display: contents;"><img src="./DK.jpg" alt="Logo"></a>
+      <h1>Deepak Kumar G S</h1>
+    </header>
+
+    <!-- Education section -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education-item">
+        <h3>B.Tech in Computer Science and Business Systems</h3>
+        <p><strong>College:</strong> <a href="https://kiot.ac.in/">Knowledge Institute of Technology</a></p>
+        <p><strong>Year:</strong> Currently in 2nd Year</p>
+      </div>
+      <div class="education-item">
+        <h3>Schooling</h3>
+        <p><strong>School:</strong> <a href="https://www.svmsn.com">Sri Vidya Mandir Senior Secondary School</a></p>
+        <p><strong>Class:</strong> LKG to 12th Grade</p>
+      </div>
+    </section>
+  </div> <!-- Close page-content-wrapper -->
+</body>
+</html>

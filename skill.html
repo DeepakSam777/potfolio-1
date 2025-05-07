@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Portfolio</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+    <style>
+        /* Specific styles for skill.html */
+        /* Header might be shared or unique. If unique, style here.
+           Assuming a global header style exists in style.css or this page doesn't have the standard header.
+           If it needs the standard header, it should be added to the HTML body. */
+
+        .skills-container { /* Renamed from .container to avoid conflict if .container is global */
+            width: 90%;
+            max-width: 900px;
+            background: rgba(10, 30, 60, 0.7); /* Darker, more techy semi-transparent background */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 60px auto; /* Added margin for spacing if header is present */
+            border: 1px solid rgba(0, 200, 255, 0.3); /* Techy border */
+        }
+        .skills-container h1 {
+            font-size: 3em; /* Larger title */
+            margin-bottom: 40px;
+            color: #00c8ff; /* Bright techy blue */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+        }
+        .skills-grid { /* Renamed from .skills */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+            gap: 25px; /* Increased gap */
+        }
+        .skill-item { /* Renamed from .skill */
+            background: rgba(0, 200, 255, 0.1); /* Light techy blue, semi-transparent */
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: 600; /* Slightly bolder */
+            color: #e0f7ff; /* Light blue text */
+            border: 1px solid rgba(0, 200, 255, 0.4);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: default; /* Or pointer if they become interactive */
+        }
+        .skill-item:hover {
+            background: rgba(0, 200, 255, 0.2);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 200, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="body-skills"> <!-- Added class for specific background -->
+    <div class="page-content-wrapper"> <!-- Wrapper for content -->
+        <!-- Header (If this page should have the standard header, add it here like in edu.html) -->
+        <!-- Example: 
+        <header>
+          <a href="index.html" style="display: contents;"><img src="./DK.jpg" alt="Logo"></a>
+          <h1>Deepak Kumar G S</h1>
+        </header> 
+        -->
+        <div class="skills-container">
+            <h1>My Skills</h1>
+            <div class="skills-grid">
+                <div class="skill-item">HTML & CSS</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">Java</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">UI/UX Design</div>
+                <div class="skill-item">N8N</div>
+                <div class="skill-item">Docker</div>
+                <div class="skill-item">Ollama</div>
+            </div>
+        </div>
+    </div> <!-- Close page-content-wrapper -->
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e0e0e0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scroll on animations */
+        }
+
+        header {
+            background-color: rgba(22, 33, 62, 0.8); /* Semi-transparent dark blue */
+            padding: 30px 20px;
+            border-bottom: 2px solid #e94560; /* Accent color */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: #e94560; /* Accent color for title */
+            font-size: 2.8em;
+            text-shadow: 0 0 10px #e94560, 0 0 20px #e94560;
+            margin: 0;
+        }
+
+        #hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px; /* Increased gap */
+            padding: 40px 20px;
+            perspective: 1000px; /* For 3D hover effect */
+        }
+
+        .hobby-card {
+            background: rgba(40, 55, 80, 0.7); /* Slightly lighter, semi-transparent */
+            color: #f0f0f0;
+            padding: 25px; /* Increased padding */
+            border-radius: 15px; /* More rounded corners */
+            width: 250px; /* Slightly wider cards */
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease, background 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(233, 69, 96, 0.3); /* Subtle accent border */
+            transform-style: preserve-3d; /* For 3D hover effect */
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(-5deg) scale(1.08); /* 3D tilt effect */
+            box-shadow: 0 15px 35px rgba(233, 69, 96, 0.4), 0 0 30px rgba(15, 52, 96, 0.5) inset;
+            background: rgba(50, 70, 100, 0.9);
+        }
+
+        .hobby-card img {
+            width: 100%;
+            height: 150px; /* Increased image height */
+            object-fit: cover; /* Ensure image covers the area */
+            border-radius: 10px; /* Rounded image corners */
+            margin-bottom: 15px; /* Space between image and text */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .hobby-card:hover img {
+            transform: scale(1.05) translateZ(20px); /* Image pops out a bit */
+        }
+
+        .hobby-card p {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #e94560; /* Accent color for hobby name */
+            margin: 0;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            animation: fadeInModal 0.5s ease-out;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #1f2c47, #2a3b5f); /* Dark, sophisticated gradient */
+            margin: 10% auto; /* 10% from the top and centered */
+            padding: 30px;
+            border: 1px solid #e94560; /* Accent border */
+            border-radius: 15px;
+            width: 70%;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 5px rgba(233, 69, 96, 0.2); /* Outer glow */
+            color: #e0e0e0;
+            position: relative;
+            animation: slideInFromTopModal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes slideInFromTopModal {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-content h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #e94560;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px #e94560;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+            text-align: left; 
+        }
+
+        .modal-content ul li {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 30px; 
+            position: relative;
+        }
+
+        .modal-content ul li::before {
+            content: '📸'; 
+            position: absolute;
+            left: 0;
+            top: 2px; 
+            color: #e94560; 
+            font-size: 1.3em; 
+        }
+
+        .modal-content ul li strong {
+            color: #f0a500; 
+            font-weight: 600;
+        }
+
+        .close-button {
+            color: #aaa;
+            position: absolute; 
+            top: 15px;
+            right: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #e94560; 
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Hobbies & Interests</h1>
+    </header>
+
+    <section id="hobbies">
+        <div class="hobby-card" id="codingCard">
+            <img src="./images.jpeg" alt="Coding">
+            <p>Coding</p>
+        </div>
+
+        <div class="hobby-card" id="uiUxCard">
+            <img src="./gradient-ui-ux-background_23-2149052117.avif" alt="UI/UX Design">
+            <p>UI/UX Design</p>
+        </div>
+
+        <div class="hobby-card" id="gameDevCard">
+            <img src="./1714364117783 (1).jpeg" alt="Game Development">
+            <p>Game Development</p>
+        </div>
+
+        <div class="hobby-card" id="photoCard">
+            <img src="./images (1).jpeg" alt="Technical Blogging">
+            <p>Photography & Videography</p>
+        </div>
+    </section>
+
+    <div id="photoModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Photography & Videography</h2>
+        <ul>
+          <li><strong>Expressing Creativity:</strong> Photography and videography allow you to tell stories and share emotions visually, unlocking your creative potential.</li>
+          <li><strong>Capturing Memories:</strong> They help preserve moments and feelings that you can look back on and share with others, making memories timeless.</li>
+          <li><strong>Health and Mindfulness:</strong> This hobby encourages you to be outdoors, reduces stress, and improves mental well-being by focusing on the present moment.</li>
+          <li><strong>Portable and Accessible:</strong> With just a smartphone or basic camera, you can practice anytime and anywhere, making it a flexible and convenient hobby.</li>
+          <li><strong>Learning and Growth:</strong> It challenges you to improve skills like composition, lighting, and storytelling, which keeps the hobby engaging and rewarding.</li>
+          <li><strong>Connection and Interaction:</strong> Photography often sparks conversations and helps you meet people, enriching your social life.</li>
+          <li><strong>Problem-Solving and Innovation:</strong> Creativity in this hobby comes from overcoming challenges and experimenting with angles, focus, and cinematic techniques to create unique visuals.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="codingModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Coding</h2>
+        <ul>
+          <li><strong>Problem Solving:</strong> Coding is like solving puzzles—every project challenges you to think logically and creatively.</li>
+          <li><strong>Creation Power:</strong> It gives you the power to build anything from scratch, automate tasks, and bring your ideas to life.</li>
+          <li><strong>Career Opportunities:</strong> Learning to code opens doors to countless opportunities in tech, from app development to robotics.</li>
+          <li><strong>Lifelong Learning:</strong> It’s a skill that encourages lifelong learning and adaptability in a rapidly changing world.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="gameDevModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Game Development</h2>
+        <ul>
+          <li><strong>Creative Expression:</strong> Lets you transform your imagination into interactive worlds and stories, blending creativity with technology.</li>
+          <li><strong>Impactful Creations:</strong> You experience the joy of seeing others play and enjoy your creations, making your work feel meaningful and rewarding.</li>
+          <li><strong>Continuous Learning:</strong> It’s a field that constantly evolves, so you’re always learning new skills and experimenting with fresh ideas.</li>
+          <li><strong>Dynamic Collaboration:</strong> Collaboration with artists, writers, and sound designers makes every project dynamic and engaging.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="uiUxModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>UI/UX Design</h2>
+        <ul>
+          <li><strong>Impactful Design:</strong> Empowers you to shape how people interact with technology, making digital experiences intuitive, beautiful, and enjoyable.</li>
+          <li><strong>Problem Solving:</strong> You get to solve real-world problems, improve usability, and create products that genuinely help people.</li>
+          <li><strong>Creative & Flexible:</strong> The field is creative, diverse, and offers flexibility—many designers work remotely or freelance, enjoying a great work-life balance.</li>
+          <li><strong>User-Centric:</strong> It’s a career where your empathy and attention to detail can have a big impact on user satisfaction.</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+        // Modal JavaScript
+        function setupModal(cardId, modalId) {
+            var card = document.getElementById(cardId);
+            var modal = document.getElementById(modalId);
+            // Query for the close button *within this specific modal*
+            var span = modal.getElementsByClassName("close-button")[0];
+
+            if (card) {
+                card.onclick = function() {
+                    if (modal) modal.style.display = "block";
+                }
+            }
+
+            if (span) {
+                span.onclick = function() {
+                    if (modal) modal.style.display = "none";
+                }
+            }
+
+            // Close modal if user clicks outside of the modal content
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+
+        setupModal("photoCard", "photoModal");
+        setupModal("codingCard", "codingModal");
+        setupModal("gameDevCard", "gameDevModal");
+        setupModal("uiUxCard", "uiUxModal");
+    </script>
+</body>
+</html>
